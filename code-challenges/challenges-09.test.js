@@ -32,6 +32,8 @@ Write a function named addValues that, given an array of numbers as input, uses 
 const addValues = (arr) => {
   const sum = arr.reduce((accumulator, value) => accumulator + value, 0);
   return sum;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
