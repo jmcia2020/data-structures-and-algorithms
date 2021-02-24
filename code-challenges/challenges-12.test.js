@@ -9,9 +9,9 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
-  // let max =arr.reduce(a,b);
-  // return Math.max[];
+  return arr.reduce((acc,cur) => {
+    return cur > acc ? cur : acc;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,7 +29,13 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let maxValue = 0;
+  matrix.forEach((arr) => {
+    arr.forEach(value => {
+      if(value > maxValue){maxValue = value;}
+    });
+  });
+  return maxValue;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +53,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  const totalArray = [];
+  let newMatrix = matrix.map( arr => {
+    let thisTotal = arr.reduce( (accumulator, value) => accumulator + value, 0);
+    totalArray.push(thisTotal);
+  });
+  let answer = totalArray.reduce( (acc, val) => acc + val, 0);
+  return answer;
 };
 
 
